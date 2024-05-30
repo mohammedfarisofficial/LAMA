@@ -1,0 +1,10 @@
+@import "../../contants/style/colors.scss";
+.sidebar-container {
+  width: 20%;
+  height: 100vh;
+  background-color: $secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

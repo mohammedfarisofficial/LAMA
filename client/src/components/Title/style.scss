@@ -1,0 +1,12 @@
+@import "../../contants/style/colors.scss";
+.title-container {
+  width: 100%;
+  min-height: 10vh;
+  //   background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    color: $primary;
+  }
+}

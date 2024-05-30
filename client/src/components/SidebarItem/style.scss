@@ -1,0 +1,14 @@
+@import "../../contants/style/colors.scss";
+
+.sidebar-item-container {
+  background-color: white;
+  margin: 0.5rem 0;
+  height: 3rem;
+  border-radius: 10px;
+  width: 90%;
+  text-decoration: none;
+}
+
+.active {
+  background-color: $primary;
+}

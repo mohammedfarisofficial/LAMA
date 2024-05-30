@@ -1,0 +1,12 @@
+@import "../../styles/common.scss";
+
+.projects-container {
+  width: 100%;
+  min-height: 93vh;
+  @include nav-padding;
+  .projects-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

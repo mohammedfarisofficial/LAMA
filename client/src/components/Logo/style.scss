@@ -1,0 +1,14 @@
+@import "../../contants/style/colors.scss";
+.logo-container {
+  display: flex;
+  align-items: center;
+  .logo-image {
+    width: 30px;
+  }
+  h3 {
+    font-size: 20px;
+    color: $primary;
+    margin-left: 2px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}

@@ -1,0 +1,6 @@
+.button {
+  transition: all 0.05s;
+  &:hover {
+    opacity: 0.5;
+  }
+}
