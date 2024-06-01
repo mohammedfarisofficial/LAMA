@@ -7,9 +7,11 @@ import InputBox from "../../components/InputBox";
 //redux
 import { useDispatch } from "react-redux";
 import { openModel } from "../../state/reducers/modelSlice";
+import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const DisplayBox = () => {
     return (
       <>
@@ -34,15 +36,15 @@ const Projects = () => {
         )}
       />
       <div className="projects-list">
-        <ProjectItem onClick={() => navigate("/project/upload")} />
-        <ProjectItem onClick={() => navigate("/project/upload")} />
-        <ProjectItem onClick={() => navigate("/project/upload")} />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
+        <ProjectItem onClick={() => navigate("/project/overview/upload")} />
+        <ProjectItem onClick={() => navigate("/project/overview/upload")} />
+        <ProjectItem onClick={() => navigate("/project/overview/upload")} />
+        <ProjectItem onClick={() => navigate("/project/overview/upload")} />
+        <ProjectItem onClick={() => navigate("/project/overview/upload")} />
+        <ProjectItem onClick={() => navigate("/project/overview/upload")} />
+        <ProjectItem onClick={() => navigate("/project/overview/upload")} />
+        <ProjectItem onClick={() => navigate("/project/overview/upload")} />
+        <ProjectItem onClick={() => navigate("/project/overview/upload")} />
       </div>
     </div>
   );

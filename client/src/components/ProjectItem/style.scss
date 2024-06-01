@@ -19,6 +19,11 @@
     height: 90%;
     margin: 0 2.5%;
     background-color: $primary;
+    background: linear-gradient(
+      318deg,
+      rgba(127, 35, 207, 1) 0%,
+      rgba(62, 8, 175, 0.8954175420168067) 100%
+    );
     border-radius: 10px;
     display: flex;
     justify-content: center;

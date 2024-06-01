@@ -21,11 +21,11 @@ const Sidebar = () => {
       className="sidebar-container"
       variants={sidebarVariants}
     >
-      <Logo />
+      {/* <Logo /> */}
       <Button label="click" onClick={() => setIsOpen(!isOpen)} />
       {sidebarLinks.map((item, index) => (
         <>
-          <SidebarItem isOpen={isOpen} {...item} />
+          <SidebarItem key={index} isOpen={isOpen} {...item} />
         </>
       ))}
     </motion.div>

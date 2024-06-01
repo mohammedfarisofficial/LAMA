@@ -1,0 +1,20 @@
+@import "../../contants/style/colors.scss";
+@import "../../styles/common.scss";
+
+.badge-container {
+  width: 100%;
+  height: 70px;
+  background: $primary;
+  background: linear-gradient(
+    318deg,
+    rgba(127, 35, 207, 1) 0%,
+    rgba(62, 8, 175, 0.8954175420168067) 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  color: #fff;
+  @include nav-padding;
+}

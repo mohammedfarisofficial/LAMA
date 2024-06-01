@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  .tabs {
+    display: flex;
+    margin-bottom: 1rem;
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 10px 10px;
+      background: none;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    button:disabled {
+      border-bottom: 3px solid #7f23cf;
+      color: #7f23cf;
+    }
+  }
+  .tab-content {
+    padding: 0 1rem;
+  }
+}

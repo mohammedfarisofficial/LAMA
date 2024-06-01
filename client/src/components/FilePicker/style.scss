@@ -1,0 +1,11 @@
+@import "../../contants/style/colors.scss";
+
+.filepicker-container{
+    width: 100%;
+    min-height: 30vh;
+    border: 2px dotted $primary;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

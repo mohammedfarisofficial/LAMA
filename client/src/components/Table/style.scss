@@ -1,0 +1,27 @@
+@import "../../contants/style/colors.scss";
+
+.table-container {
+  width: 100%;
+  border-radius: 20px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-width: 2px;
+  margin-bottom: 2rem;
+  -webkit-box-shadow: 23px 27px 17px -24px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 23px 27px 17px -24px rgba(0, 0, 0, 0.26);
+  box-shadow: 23px 27px 17px -24px rgba(0, 0, 0, 0.26);
+  border: 1px solid rgba(0, 0, 0, 0.071);
+}
+.table-container th {
+  padding: 13px 5px;
+  text-align: center;
+}
+.table-container td {
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.table-container thead {
+  background-color: $secondary;
+}

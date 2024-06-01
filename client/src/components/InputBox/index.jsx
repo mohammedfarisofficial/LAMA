@@ -3,7 +3,8 @@ const InputBox = ({
   size = "full",
   label = "label",
   placeholder = "placeholder",
-  error = true,
+  error = "",
+  ...props
 }) => {
   return (
     <div className="input-container">
@@ -11,8 +12,9 @@ const InputBox = ({
       <input
         style={{ width: size === "half" ? "50%" : "100%" }}
         placeholder={placeholder}
+        {...props}
       />
-      {error && <p className="input-error">error message show here</p>}
+      {error && <p className="input-error">{error}</p>}
     </div>
   );
 };

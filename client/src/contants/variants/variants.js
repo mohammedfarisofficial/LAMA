@@ -33,6 +33,18 @@ const buttonVariants = {
     backgroundColor: "transparent",
     color: "#dc3545",
   },
+  action: {
+    padding: "8px 18px",
+    border: "none",
+    borderRadius: "20px",
+    cursor: "pointer",
+    margin: ".5rem",
+    fontSize: "14px",
+    backgroundColor: "#4a4a4a",
+    color: "#fff",
+    fontSize: "12px",
+    fontWeight: "400",
+  },
 };
 
 // model
@@ -47,7 +59,7 @@ const bgVariants = {
 //sidebar
 const sidebarVariants = {
   open: { width: "20%" },
-  closed: { width: "5%" },
+  closed: { width: "4%" },
 };
 const sidebarTextVariants = {
   open: { opacity: 1 },

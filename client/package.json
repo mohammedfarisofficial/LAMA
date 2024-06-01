@@ -15,7 +15,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.2",
+    "react-router-breadcrumbs-hoc": "^4.1.0",
     "react-router-dom": "^6.23.1",
+    "react-tab-set": "^2.0.119",
     "sass": "^1.77.3"
   },
   "devDependencies": {

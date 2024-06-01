@@ -1,8 +1,13 @@
 .project-container {
   display: flex;
   .project-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 7vh;
     width: 100%;
+    overflow-y: scroll;
+    height: 100vh;
   }
 }
 

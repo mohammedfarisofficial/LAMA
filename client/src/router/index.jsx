@@ -14,6 +14,9 @@ import Projects from "../screens/Projects";
 import Upload from "../screens/Upload";
 import Deployment from "../screens/Deployment";
 import RootLayout from "../layout/RootLayout";
+import EditTranscript from "../screens/EditTranscript";
+import Configuration from "../screens/Configuration";
+import Pricing from "../screens/Pricing";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,8 +26,13 @@ const router = createBrowserRouter(
         <Route path="projects" element={<Projects />} />
       </Route>
       <Route path="project" element={<Project />}>
-        <Route path="upload" element={<Upload />} />
+        <Route path="overview">
+          <Route path="upload" element={<Upload />} />
+          <Route path="edit" element={<EditTranscript />} />
+        </Route>
         <Route path="deployment" element={<Deployment />} />
+        <Route path="widget-configuaration" element={<Configuration />} />
+        <Route path="pricing" element={<Pricing />} />
       </Route>
     </Route>
   )
