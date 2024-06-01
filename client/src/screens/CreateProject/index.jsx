@@ -9,8 +9,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { officeWorkImg } from "../../contants/image";
 // comp
 import Button from "../../components/Button";
-import InputBox from "../../components/InputBox";
-import DeleteModal from "../../components/Modals/DeleteModal";
+import CreateProjectModal from "../../components/Modals/CreateProjectModal";
 
 const CreateProject = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,13 +24,14 @@ const CreateProject = () => {
 
   return (
     <div className="createprojects-container">
-      <DeleteModal
+      <CreateProjectModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         deleteBtnMessage="Delete"
         itemBody="Are you sure you want to delete this item?"
         errorText=""
         title="Create Project"
+        actionButtonLabel="Create Project"
       />
       <img className="createproject-image" src={officeWorkImg} alt="" />
       <h3>Create New Project</h3>

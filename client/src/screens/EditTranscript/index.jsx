@@ -6,7 +6,7 @@ import TextArea from "../../components/TextArea";
 const EditTranscript = () => {
   const renderRightItem = () => {
     return (
-      <div>
+      <div style={{ display: "flex" }}>
         <Button variant="cancel" label="Discard" />
         <Button variant="dark" label="Save & exit" />
       </div>

@@ -24,9 +24,7 @@ const Tab = ({ data }) => {
         {data.map(({ id, Content }, i) => (
           <div key={i}>
             {currentTab === `${id}` && (
-              <div className="tab-body">
-                <Content />
-              </div>
+              <div className="tab-body">{Content}</div>
             )}
           </div>
         ))}

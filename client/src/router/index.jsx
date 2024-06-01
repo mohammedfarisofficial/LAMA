@@ -17,6 +17,7 @@ import RootLayout from "../layout/RootLayout";
 import EditTranscript from "../screens/EditTranscript";
 import Configuration from "../screens/Configuration";
 import Pricing from "../screens/Pricing";
+import Settings from "../screens/Settings";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,6 +34,7 @@ const router = createBrowserRouter(
         <Route path="deployment" element={<Deployment />} />
         <Route path="widget-configuaration" element={<Configuration />} />
         <Route path="pricing" element={<Pricing />} />
+        <Route path="settings" element={<Settings />} />
       </Route>
     </Route>
   )

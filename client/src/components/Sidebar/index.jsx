@@ -12,6 +12,7 @@ import { sidebarLinks } from "../../contants/links";
 import Button from "../Button";
 import SidebarItem from "../SidebarItem";
 import Logo from "../Logo";
+import { settingsIcon } from "../../contants/icons";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -22,12 +23,22 @@ const Sidebar = () => {
       variants={sidebarVariants}
     >
       {/* <Logo /> */}
-      <Button label="click" onClick={() => setIsOpen(!isOpen)} />
-      {sidebarLinks.map((item, index) => (
-        <>
-          <SidebarItem key={index} isOpen={isOpen} {...item} />
-        </>
-      ))}
+      <div className="sidebar-route-container">
+        <Button label="click" onClick={() => setIsOpen(!isOpen)} />
+        {sidebarLinks.map((item, index) => (
+          <>
+            <SidebarItem key={index} isOpen={isOpen} {...item} />
+          </>
+        ))}
+      </div>
+      <div className="sidebar-route-container">
+        <SidebarItem
+          path="settings"
+          title="Settings"
+          isOpen={isOpen}
+          icon={settingsIcon}
+        />
+      </div>
     </motion.div>
   );
 };

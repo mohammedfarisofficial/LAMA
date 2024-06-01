@@ -31,7 +31,12 @@ const Table = ({ headers }) => {
           <td>hello</td>
           <td>hello</td>
           <td>hello</td>
-          <td>
+          <td
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             <Button label="Edit" />
             <Button variant="cancel" label="Delete" />
           </td>

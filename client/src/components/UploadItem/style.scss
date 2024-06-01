@@ -1,0 +1,48 @@
+@import "../../contants/style/colors.scss";
+
+.upload-item-container {
+  max-width: 290px;
+  height: 100px;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 23px 27px 17px -24px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 23px 27px 17px -24px rgba(0, 0, 0, 0.26);
+  box-shadow: 23px 27px 17px -24px rgba(0, 0, 0, 0.26);
+  border: 1px solid rgba(0, 0, 0, 0.071);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  .upload-item-icon {
+    width: 20%;
+    aspect-ratio: 1;
+    // border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    img {
+      object-fit: contain;
+      width: 90%;
+    }
+    h1 {
+      font-size: 35px;
+      color: #fff;
+    }
+  }
+  .upload-item-content {
+    padding-left: 10px;
+    h4 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 14px;
+    }
+
+    .upload-item-date {
+      margin-top: 1rem;
+      color: rgba(128, 128, 128, 0.818);
+    }
+  }
+}

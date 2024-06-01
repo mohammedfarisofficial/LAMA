@@ -1,37 +1,47 @@
 import "./style.scss";
+import { useState } from "react";
 //comp
 import Title from "../../components/Title";
 import Button from "../../components/Button";
 import ProjectItem from "../../components/ProjectItem";
-import InputBox from "../../components/InputBox";
+import CreateProjectModal from "../../components/Modals/CreateProjectModal";
 //redux
 import { useDispatch } from "react-redux";
-import { openModel } from "../../state/reducers/modelSlice";
 import { useNavigate } from "react-router-dom";
+import { createIcon } from "../../contants/icons";
 
 const Projects = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const DisplayBox = () => {
-    return (
-      <>
-        <InputBox label="Enter Project Name:" />
-        <InputBox error={false} label="Enter Project Name:" />
-      </>
-    );
+
+  const handleShowModal = () => {
+    setIsModalOpen(true);
   };
-  const openModelHandler = () => {
-    dispatch(openModel(DisplayBox));
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
+
   return (
     <div className="projects-container">
+      <CreateProjectModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        deleteBtnMessage="Delete"
+        itemBody="Are you sure you want to delete this item?"
+        errorText=""
+        title="Create Project"
+      />
       <div className="projects-back-btn">go to home</div>
       <Title
         RightItem={() => (
           <Button
             variant="dark"
             label="New Project"
-            onClick={openModelHandler}
+            onClick={handleShowModal}
+            Icon={createIcon}
           />
         )}
       />

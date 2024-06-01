@@ -63,7 +63,7 @@ const sidebarVariants = {
 };
 const sidebarTextVariants = {
   open: { opacity: 1 },
-  closed: { opacity: 0 },
+  closed: { opacity: 0, display: "none" },
 };
 
 // for framer motion

@@ -1,9 +1,12 @@
 import "./style.scss";
 
-const Title = ({ title = "Projects", RightItem }) => {
+const Title = ({ title = "Projects", RightItem, subTitle }) => {
   return (
     <div className="title-container">
-      <h3>{title}</h3>
+      <div>
+        <h3>{title}</h3>
+        {subTitle && <p>{subTitle}</p>}
+      </div>
       {RightItem && <RightItem />}
     </div>
   );

@@ -14,6 +14,7 @@
   &:hover {
     background-color: $primary;
   }
+
   .sidebar-item-text {
     font-size: 14px;
     font-weight: 500;
@@ -32,6 +33,9 @@
     align-items: center;
     h4 {
       color: $primary;
+    }
+    img {
+      width: 20px;
     }
   }
 }

@@ -1,8 +1,6 @@
 import "./style.scss";
-import { useRef, useState, useEffect } from "react";
 // redux
 import { useDispatch } from "react-redux";
-import { closeModel, openModel } from "../../state/reducers/modelSlice";
 // constants
 import { tableHeaders } from "../../contants/links";
 // comp
@@ -15,75 +13,36 @@ import FilePicker from "../../components/FilePicker";
 import Table from "../../components/Table";
 import Badge from "../../components/Badge";
 import Button from "../../components/Button";
+import UploadItem from "../../components/UploadItem";
+import UploadModal from "../../components/Modals/UploadModal";
+// hooks
+import useDisclosure from "../../hooks/useDisclosure";
 
 const Upload = () => {
-  const [name, setName] = useState("");
-  const [desc, setDesc] = useState("");
-
-  const dispatch = useDispatch();
-
-  const nameRef = useRef(name);
-  const descRef = useRef(desc);
-
-  useEffect(() => {
-    nameRef.current = name;
-    descRef.current = desc;
-  }, [name, desc]);
-
-  const uploadHandler = () => {
-    console.log("name: ", nameRef.current);
-    console.log("desc: ", descRef.current);
-  };
-
-  const RenderModel = () => {
-    return (
-      <>
-        <InputBox
-          onChange={(e) => setName(e.target.value)}
-          label="Name"
-          placeholder="Enter name..."
-        />
-        <InputBox
-          onChange={(e) => setDesc(e.target.value)}
-          label="Description"
-          placeholder="Enter description..."
-        />
-      </>
-    );
-  };
-
-  const closeModelHanlder = () => {
-    dispatch(closeModel());
-  };
-  const uploadModelHanlder = () => {
-    dispatch(
-      openModel({
-        isOpen: true,
-        children: <RenderModel />,
-        title: "Upload from youtube",
-        logo: null,
-        onAction: () => {
-          uploadHandler();
-          closeModelHanlder();
-        },
-        actionLabel: "Upload",
-        actionVariant: "primary",
-      })
-    );
-  };
+  const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <div className="upload-container">
-      <Title title="Upload" />
+      <UploadModal
+        isOpen={isOpen}
+        onClose={onClose}
+        deleteBtnMessage="Delete"
+        itemBody="Are you sure you want to delete this item?"
+        errorText=""
+        title="Create Project"
+        actionButtonLabel="Upload"
+      />
+      <Title
+        title="Upload"
+        subTitle=" Extract and analyze metadata and content from YouTube, Spotify, and
+        RSS feeds using their respective APIs to gather insights on trends."
+      />
       <div className="upload-list">
-        <ProjectItem onClick={uploadModelHanlder} />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
+        <UploadItem onClick={onOpen} />
+        <UploadItem />
+        <UploadItem />
       </div>
-      {/* <Divition /> */}
-      {/* <FilePicker /> */}
+      {/* <Divition />
+      <FilePicker /> */}
       <Badge>
         <h4>All files are processed! Your widget is ready to go!</h4>
         <Button label="Try it out!" onClick={() => alert("Button Clicked!")} />

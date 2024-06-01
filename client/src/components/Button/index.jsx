@@ -3,6 +3,7 @@ import {
   buttonVariants,
   buttonBaseStyle,
 } from "../../contants/variants/variants";
+
 const Button = ({ variant = "danger", label = "Button", Icon, ...props }) => {
   const style = buttonVariants[variant] || buttonBaseStyle;
 
