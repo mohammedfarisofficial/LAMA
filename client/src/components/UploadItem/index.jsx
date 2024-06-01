@@ -1,8 +1,16 @@
-import { spotifyImg, youtubeImg } from "../../contants/image";
 import "./style.scss";
+import { youtubeImg } from "../../contants/image";
+// framer
+import { motion } from "framer-motion";
 const UploadItem = ({ ...props }) => {
   return (
-    <div {...props} className="upload-item-container">
+    <motion.div
+      initial={{ scale: 0.9 }}
+      animate={{ scale: 1 }}
+      whileHover={{ scale: 1.01 }}
+      className="upload-item-container"
+      {...props}
+    >
       <div className="upload-item-icon">
         <img src={youtubeImg} alt="" />
       </div>
@@ -12,7 +20,7 @@ const UploadItem = ({ ...props }) => {
           <p>Upload youtube video</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

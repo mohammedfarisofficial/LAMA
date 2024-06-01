@@ -10,6 +10,7 @@ import { officeWorkImg } from "../../contants/image";
 // comp
 import Button from "../../components/Button";
 import CreateProjectModal from "../../components/Modals/CreateProjectModal";
+import { homeIcon } from "../../contants/icons";
 
 const CreateProject = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,9 +34,11 @@ const CreateProject = () => {
         title="Create Project"
         actionButtonLabel="Create Project"
       />
+      <div className="createproject-backbtn">
+        <Button variant="outline" label="Back to home" Icon={homeIcon} />
+      </div>
       <img className="createproject-image" src={officeWorkImg} alt="" />
       <h3>Create New Project</h3>
-      <div style={{ position: "absolute", zIndex: 999 }}>hi</div>
       <p className="createproject-desc">
         A robust web application designed to streamline project planning, task
         assignment, and team collaboration, ensuring efficient workflow and

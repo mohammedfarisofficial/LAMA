@@ -4,23 +4,16 @@
   margin: 0.5rem 0;
   height: 3rem;
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
   text-decoration: none;
   display: flex;
   align-items: center;
   padding-left: 10px;
   text-decoration: none;
-  transition: 0.2s ease-in;
-  &:hover {
-    background-color: $primary;
-  }
 
   .sidebar-item-text {
     font-size: 14px;
     font-weight: 500;
-  }
-  &:hover .sidebar-item-text {
-    color: white;
   }
   .sidebar-item-step {
     margin-right: 10px;
@@ -31,6 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     h4 {
       color: $primary;
     }
@@ -48,8 +42,27 @@
     rgba(62, 8, 175, 0.8954175420168067) 100%
   );
   color: white;
-  .sidebar-item-step {
-    background: #fff;
-    color: $primary;
-  }
+}
+
+.sidebar-item-parent-container {
+  margin: 0.5rem 0;
+  height: 3rem;
+  border-radius: 10px;
+  width: 90%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  text-decoration: none;
+  transition: 0.2s ease-in;
+}
+
+.sidebar-item-parent-container .active {
+  background-color: $primary;
+  background: linear-gradient(
+    318deg,
+    rgba(127, 35, 207, 1) 0%,
+    rgba(62, 8, 175, 0.8954175420168067) 100%
+  );
+  color: white;
 }

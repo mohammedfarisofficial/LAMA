@@ -1,15 +1,17 @@
+@import "../../styles/common.scss";
 .createprojects-container {
   width: 100%;
   height: 93vh;
-  //   background-color: red;
   display: flex;
-  //   justify-content: center;
-  padding-top: 15vh;
+  // padding-top: 50vh;
   align-items: center;
+  // justify-content: center;
   flex-direction: column;
+  @include nav-padding;
   .createproject-image {
     width: 300px;
     margin-bottom: 2rem;
+    margin-top: 10vh;
   }
   h3 {
     font-size: 28px;
@@ -21,4 +23,8 @@
     text-align: center;
     color: #767676;
   }
+}
+
+.createproject-backbtn{
+  width: 100%;
 }

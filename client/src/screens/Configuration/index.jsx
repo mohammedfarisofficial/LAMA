@@ -33,8 +33,8 @@ const Configuration = () => {
   return (
     <div className="configuration-container">
       <Title
-        subTitle="Adjust"
-        title="Configuration"
+        title="Widget Configuration"
+        subTitle="Settings"
       />
       <Tab data={tabs} />
     </div>

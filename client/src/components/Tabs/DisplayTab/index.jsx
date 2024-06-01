@@ -1,14 +1,20 @@
 import "./style.scss";
 import { useState } from "react";
+// icons 
+import { uploadIcon } from "../../../contants/icons";
 // comp
 import Division from "../../Division";
 import InputBox from "../../InputBox";
 import Title from "../../Title";
 import Button from "../../Button";
-import { uploadIcon } from "../../../contants/icons";
+import Switch from "../../Switch";
 
 const DisplayTab = () => {
   const [fontSize, setFontSize] = useState();
+  const [isShowSources, setIsShowSources] = useState(false);
+
+
+
   return (
     <div className="displaytab-container">
       <div className="displaytab-theme-container">
@@ -27,7 +33,13 @@ const DisplayTab = () => {
           />
         </div>
       </div>
-      <Division />
+      <Switch
+        title="Show Sources"
+        subTitle="Toggle to show sources"
+        value={isShowSources}
+        setValue={setIsShowSources}
+      />
+      {/* <Division /> */}
       <div className="displaytab-chat-container">
         <Title title="Chat icon" />
         <div className="displaytab-items">

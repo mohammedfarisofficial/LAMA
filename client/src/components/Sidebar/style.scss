@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   .sidebar-route-container {
     width: 100%;
     display: flex;
@@ -14,3 +15,25 @@
     align-items: center;
   }
 }
+
+// action btn
+
+.sidebar-action-btn {
+  width: 30px;
+  aspect-ratio: 1;
+  background-color: $primary;
+  position: absolute;
+  bottom: 15%;
+  right: -10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  img {
+    width: 20px;
+    transform: rotate(90deg);
+  }
+}
+

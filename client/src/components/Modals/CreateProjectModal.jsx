@@ -36,6 +36,7 @@ const CreateProjectModal = ({
           setValue={setProjectName}
           label="Project name"
           placeholder="Enter project name..."
+          error="Project name can't be empty"
         />
       </Modal.Body>
       <div className="model-footer">

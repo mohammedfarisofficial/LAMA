@@ -3,16 +3,11 @@ import "./style.scss";
 // framer
 import { motion } from "framer-motion";
 // constants
-import {
-  sidebarTextVariants,
-  sidebarVariants,
-} from "../../contants/variants/variants";
+import { sidebarVariants } from "../../contants/variants/variants";
 import { sidebarLinks } from "../../contants/links";
+import { leftIcon, settingsIcon } from "../../contants/icons";
 // comp
-import Button from "../Button";
 import SidebarItem from "../SidebarItem";
-import Logo from "../Logo";
-import { settingsIcon } from "../../contants/icons";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -22,9 +17,7 @@ const Sidebar = () => {
       className="sidebar-container"
       variants={sidebarVariants}
     >
-      {/* <Logo /> */}
       <div className="sidebar-route-container">
-        <Button label="click" onClick={() => setIsOpen(!isOpen)} />
         {sidebarLinks.map((item, index) => (
           <>
             <SidebarItem key={index} isOpen={isOpen} {...item} />
@@ -39,6 +32,20 @@ const Sidebar = () => {
           icon={settingsIcon}
         />
       </div>
+      <motion.div
+        onClick={() => setIsOpen(!isOpen)}
+        className="sidebar-action-btn"
+        whileHover={{ scale: 0.9 }}
+        whileTap={{ scale: 0.8 }}
+        transition={{ bounce: true }}
+      >
+        <motion.img
+          draggable="false"
+          animate={{ rotateZ: isOpen ? "0deg" : "180deg" }}
+          src={leftIcon}
+          alt=""
+        />
+      </motion.div>
     </motion.div>
   );
 };

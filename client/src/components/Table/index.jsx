@@ -1,4 +1,7 @@
 import "./style.scss";
+// framer
+import { motion } from "framer-motion";
+// router
 import { useNavigate } from "react-router-dom";
 // comp
 import Button from "../Button";
@@ -6,7 +9,8 @@ import Button from "../Button";
 const Table = ({ headers }) => {
   const navigate = useNavigate();
   return (
-    <table className="table-container">
+    <motion.table initial={{ scale: 0.9 }}
+    animate={{ scale: 1 }} className="table-container">
       <thead>
         <tr>
           {headers.map(({ title }, index) => (
@@ -15,10 +19,15 @@ const Table = ({ headers }) => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>hello</td>
-          <td>hello</td>
-          <td>hello</td>
+        <motion.tr
+          initial={{ scale: 0.99 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.1 }}
+          whileHover={{ scale: 0.99 }}
+        >
+          <td>Sample Project</td>
+          <td>12 jun 24 | 15:67</td>
+          <td>Done</td>
           <td>
             <Button
               onClick={() => navigate("/project/overview/edit")}
@@ -26,11 +35,15 @@ const Table = ({ headers }) => {
             />
             <Button variant="cancel" label="Delete" />
           </td>
-        </tr>
-        <tr>
-          <td>hello</td>
-          <td>hello</td>
-          <td>hello</td>
+        </motion.tr>
+        <motion.tr
+          initial={{ scale: 0.99 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <td>Sample Project</td>
+          <td>12 jun 24 | 15:67</td>
+          <td>Done</td>
           <td
             style={{
               display: "flex",
@@ -40,36 +53,74 @@ const Table = ({ headers }) => {
             <Button label="Edit" />
             <Button variant="cancel" label="Delete" />
           </td>
-        </tr>
-        <tr>
-          <td>hello</td>
-          <td>hello</td>
-          <td>hello</td>
+        </motion.tr>
+        <motion.tr
+          initial={{ scale: 0.99 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <td>Sample Project</td>
+          <td>12 jun 24 | 15:67</td>
+          <td>Done</td>
           <td>
             <Button label="Edit" />
             <Button variant="cancel" label="Delete" />
           </td>
-        </tr>
-        <tr>
-          <td>hello</td>
-          <td>hello</td>
-          <td>hello</td>
+        </motion.tr>
+        <motion.tr
+          initial={{ scale: 0.99 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <td>Sample Project</td>
+          <td>12 jun 24 | 15:67</td>
+          <td>Done</td>
           <td>
             <Button label="Edit" />
             <Button variant="cancel" label="Delete" />
           </td>
-        </tr>
-        <tr>
-          <td>hello</td>
-          <td>hello</td>
-          <td>hello</td>
+        </motion.tr>
+        <motion.tr
+          initial={{ scale: 0.99 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <td>Sample Project</td>
+          <td>12 jun 24 | 15:67</td>
+          <td>Done</td>
           <td>
             <Button label="Edit" />
             <Button variant="cancel" label="Delete" />
           </td>
-        </tr>
+        </motion.tr>
+        <motion.tr
+          initial={{ scale: 0.99 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <td>Sample Project</td>
+          <td>12 jun 24 | 15:67</td>
+          <td>Done</td>
+          <td>
+            <Button label="Edit" />
+            <Button variant="cancel" label="Delete" />
+          </td>
+        </motion.tr>
+        <motion.tr
+          initial={{ scale: 0.99 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <td>Sample Project</td>
+          <td>12 jun 24 | 15:67</td>
+          <td>Done</td>
+          <td>
+            <Button label="Edit" />
+            <Button variant="cancel" label="Delete" />
+          </td>
+        </motion.tr>
       </tbody>
-    </table>
+    </motion.table>
   );
 };
 

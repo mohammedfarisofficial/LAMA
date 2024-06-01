@@ -33,6 +33,12 @@ const buttonVariants = {
     backgroundColor: "transparent",
     color: "#dc3545",
   },
+  outline: {
+    ...buttonBaseStyle,
+    backgroundColor: "transparent",
+    border: "1px solid black",
+    padding: "5px 18px",
+  },
   action: {
     padding: "8px 18px",
     border: "none",

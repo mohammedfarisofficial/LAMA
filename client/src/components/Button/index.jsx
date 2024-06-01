@@ -1,4 +1,7 @@
 import "./style.scss";
+//framer
+import { motion } from "framer-motion";
+//contants
 import {
   buttonVariants,
   buttonBaseStyle,
@@ -8,10 +11,17 @@ const Button = ({ variant = "danger", label = "Button", Icon, ...props }) => {
   const style = buttonVariants[variant] || buttonBaseStyle;
 
   return (
-    <button className="button" {...props} style={style}>
+    <motion.button
+      whileHover={{ scale: 0.97, opacity: 0.8 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ duration: 0.05 }}
+      className="button"
+      {...props}
+      style={style}
+    >
       {Icon && <img className="button-icon" src={Icon} />}
       {label}
-    </button>
+    </motion.button>
   );
 };
 

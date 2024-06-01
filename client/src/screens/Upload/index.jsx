@@ -1,4 +1,5 @@
 import "./style.scss";
+import { useLocation, Link } from "react-router-dom";
 // redux
 import { useDispatch } from "react-redux";
 // constants
@@ -15,13 +16,16 @@ import Badge from "../../components/Badge";
 import Button from "../../components/Button";
 import UploadItem from "../../components/UploadItem";
 import UploadModal from "../../components/Modals/UploadModal";
+import Breadcrumbs from "../../components/Breadcrumps";
 // hooks
 import useDisclosure from "../../hooks/useDisclosure";
 
 const Upload = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
+
   return (
     <div className="upload-container">
+      <Breadcrumbs />
       <UploadModal
         isOpen={isOpen}
         onClose={onClose}
@@ -31,11 +35,7 @@ const Upload = () => {
         title="Create Project"
         actionButtonLabel="Upload"
       />
-      <Title
-        title="Upload"
-        subTitle=" Extract and analyze metadata and content from YouTube, Spotify, and
-        RSS feeds using their respective APIs to gather insights on trends."
-      />
+      <Title title="Upload Files" />
       <div className="upload-list">
         <UploadItem onClick={onOpen} />
         <UploadItem />
@@ -47,7 +47,9 @@ const Upload = () => {
         <h4>All files are processed! Your widget is ready to go!</h4>
         <Button label="Try it out!" onClick={() => alert("Button Clicked!")} />
       </Badge>
-      <Table headers={tableHeaders} />
+      <div style={{ paddingBottom: "5vh" }}>
+        <Table headers={tableHeaders} />
+      </div>
     </div>
   );
 };

@@ -1,0 +1,25 @@
+@import "../../contants/style/colors.scss";
+.react-toggle--checked .react-toggle-track {
+  background-color: $primary !important;
+}
+.react-toggle--checked .react-toggle-thumb {
+  border-color: $primary !important;
+}
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: $primary !important;
+}
+
+.switch-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.switch-content{
+    p{
+        &:last-child{
+            font-size: 12px;
+            color: gray;
+        }
+    }
+}

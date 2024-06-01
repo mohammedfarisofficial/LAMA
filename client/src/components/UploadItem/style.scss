@@ -8,7 +8,7 @@
   -webkit-box-shadow: 23px 27px 17px -24px rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 23px 27px 17px -24px rgba(0, 0, 0, 0.26);
   box-shadow: 23px 27px 17px -24px rgba(0, 0, 0, 0.26);
-  border: 1px solid rgba(0, 0, 0, 0.071);
+  border: 1px solid rgba(82, 80, 80, 0.154);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -38,6 +38,7 @@
     }
     p {
       font-size: 14px;
+      color: gray;
     }
 
     .upload-item-date {
