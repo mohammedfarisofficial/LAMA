@@ -9,26 +9,21 @@ import CreateProjectModal from "../../components/Modals/CreateProjectModal";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createIcon } from "../../contants/icons";
+//hooks
+import useDisclosure from "../../hooks/useDisclosure";
 
 const Projects = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isOpen, onClose, onOpen } = useDisclosure();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleShowModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <div className="projects-container">
       <CreateProjectModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
+        isOpen={isOpen}
+        onClose={onClose}
         deleteBtnMessage="Delete"
         itemBody="Are you sure you want to delete this item?"
         errorText=""
@@ -40,7 +35,7 @@ const Projects = () => {
           <Button
             variant="dark"
             label="New Project"
-            onClick={handleShowModal}
+            onClick={onOpen}
             Icon={createIcon}
           />
         )}

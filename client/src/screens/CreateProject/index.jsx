@@ -1,33 +1,23 @@
 import "./style.scss";
-import { useRef, useState, useEffect } from "react";
-//redux
-import { useDispatch } from "react-redux";
-import { closeModel, openModel } from "../../state/reducers/modelSlice";
 // router
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // contants
 import { officeWorkImg } from "../../contants/image";
+import { homeIcon } from "../../contants/icons";
 // comp
 import Button from "../../components/Button";
 import CreateProjectModal from "../../components/Modals/CreateProjectModal";
-import { homeIcon } from "../../contants/icons";
+// hooks
+import useDisclosure from "../../hooks/useDisclosure";
 
 const CreateProject = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleShowModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const { onClose, onOpen, isOpen } = useDisclosure();
 
   return (
     <div className="createprojects-container">
       <CreateProjectModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
+        isOpen={isOpen}
+        onClose={onClose}
         deleteBtnMessage="Delete"
         itemBody="Are you sure you want to delete this item?"
         errorText=""
@@ -45,7 +35,7 @@ const CreateProject = () => {
         productivity. It offers real-time progress tracking, comprehensive
         reporting features
       </p>
-      <Button onClick={handleShowModal} label="New Project" variant="dark" />
+      <Button onClick={onOpen} label="New Project" variant="dark" />
       <NavLink to="projects">Goto projects</NavLink>
     </div>
   );
