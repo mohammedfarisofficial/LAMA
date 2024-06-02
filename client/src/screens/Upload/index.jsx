@@ -23,7 +23,11 @@ import useDisclosure from "../../hooks/useDisclosure";
 
 const Upload = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
-  
+  const {
+    isOpen: isTableOpen,
+    onClose: onTableClose,
+    onOpen: onTableOpen,
+  } = useDisclosure();
 
   return (
     <div className="upload-container">
@@ -37,21 +41,51 @@ const Upload = () => {
         title="Create Project"
         actionButtonLabel="Upload"
       />
-      <Title title="Upload Files" />
+      <Title
+        title="Upload Files"
+        RightItem={() => (
+          <>
+            {isTableOpen ? (
+              <Button
+                variant="primary"
+                label="Hide Table"
+                onClick={onTableClose}
+              />
+            ) : (
+              <Button
+                variant="primary"
+                label="Show Table"
+                onClick={onTableOpen}
+              />
+            )}
+          </>
+        )}
+      />
       <div className="upload-list">
         <UploadItem onClick={onOpen} />
         <UploadItem />
         <UploadItem />
       </div>
-      <Divition />
-      <FilePicker />
-      {/* <Badge>
-        <h4>All files are processed! Your widget is ready to go!</h4>
-        <Button label="Try it out!" onClick={() => alert("Button Clicked!")} />
-      </Badge>
-      <div style={{ paddingBottom: "5vh" }}>
-        <Table headers={tableHeaders} />
-      </div> */}
+
+      {isTableOpen ? (
+        <>
+          <Badge>
+            <h4>All files are processed! Your widget is ready to go!</h4>
+            <Button
+              label="Try it out!"
+              onClick={() => alert("Button Clicked!")}
+            />
+          </Badge>
+          <div style={{ paddingBottom: "5vh" }}>
+            <Table headers={tableHeaders} />
+          </div>
+        </>
+      ) : (
+        <>
+          <Divition />
+          <FilePicker />
+        </>
+      )}
     </div>
   );
 };
