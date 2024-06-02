@@ -1,21 +1,22 @@
 import Project from "../models/Project.js";
 
 const createProject = async (req, res) => {
-  const { projectName, data } = req.body;
+  const { projectName, userEmail } = req.body;
 
   try {
     //create project
-
     const newProject = new Project({
       name: projectName,
-      data,
+      userEmail,
     });
 
     const projectCreated = await newProject.save();
 
     if (projectCreated) {
       console.log("Project Created!");
-      res.status(201).json(projectCreated);
+
+      const allProjects = await Project.find();
+      res.status(201).json(allProjects);
     } else {
       console.error("Something went wrong!");
       res.status(401).json("Something went wrong!");

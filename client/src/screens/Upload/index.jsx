@@ -1,7 +1,8 @@
 import "./style.scss";
+import { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 // redux
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // constants
 import { tableHeaders } from "../../contants/links";
 // comp
@@ -22,6 +23,7 @@ import useDisclosure from "../../hooks/useDisclosure";
 
 const Upload = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
+  
 
   return (
     <div className="upload-container">

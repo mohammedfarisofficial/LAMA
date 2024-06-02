@@ -8,7 +8,7 @@ const sidebarLinks = [
   },
   {
     path: "widget-configuaration",
-    title: "Widget Config",
+    title: "Configuration",
     step: 2,
   },
   {

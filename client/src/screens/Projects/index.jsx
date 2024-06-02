@@ -8,12 +8,11 @@ import CreateProjectModal from "../../components/Modals/CreateProjectModal";
 //redux
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { createIcon } from "../../contants/icons";
+import { createIcon, homeIcon } from "../../contants/icons";
 //hooks
 import useDisclosure from "../../hooks/useDisclosure";
 
 const Projects = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   const dispatch = useDispatch();
@@ -24,12 +23,20 @@ const Projects = () => {
       <CreateProjectModal
         isOpen={isOpen}
         onClose={onClose}
-        deleteBtnMessage="Delete"
+        deleteButtonLabel="Cancel"
         itemBody="Are you sure you want to delete this item?"
         errorText=""
         title="Create Project"
+        actionButtonLabel="Create Project"
       />
-      <div className="projects-back-btn">go to home</div>
+      <div className="projects-backbtn">
+        <Button
+          variant="outline"
+          label="Back to home"
+          Icon={homeIcon}
+          onClick={() => navigate(-1)}
+        />
+      </div>
       <Title
         RightItem={() => (
           <Button

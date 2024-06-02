@@ -14,7 +14,10 @@ const projectSchema = new Schema(
     name: {
       type: String,
     },
-
+    userEmail: {
+      type: String,
+      requied: true,
+    },
     data: [projectDataSchema],
   },
   {

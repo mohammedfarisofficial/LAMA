@@ -65,7 +65,7 @@ const bgVariants = {
 //sidebar
 const sidebarVariants = {
   open: { width: "20%" },
-  closed: { width: "4%" },
+  closed: { width: "5%" },
 };
 const sidebarTextVariants = {
   open: { opacity: 1 },

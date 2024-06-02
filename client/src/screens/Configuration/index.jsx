@@ -5,6 +5,7 @@ import InputBox from "../../components/InputBox";
 import Tab from "../../components/Tab";
 import DisplayTab from "../../components/Tabs/DisplayTab";
 import GeneralTab from "../../components/Tabs/General";
+import Breadcrumbs from "../../components/Breadcrumps";
 
 const Configuration = () => {
   // input data
@@ -32,10 +33,8 @@ const Configuration = () => {
   ];
   return (
     <div className="configuration-container">
-      <Title
-        title="Widget Configuration"
-        subTitle="Settings"
-      />
+      <Breadcrumbs />
+      <Title title="Configuration" subTitle="Settings" />
       <Tab data={tabs} />
     </div>
   );
