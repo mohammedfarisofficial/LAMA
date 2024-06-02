@@ -41,15 +41,15 @@ const Upload = () => {
         <UploadItem />
         <UploadItem />
       </div>
-      {/* <Divition />
-      <FilePicker /> */}
-      <Badge>
+      <Divition />
+      <FilePicker />
+      {/* <Badge>
         <h4>All files are processed! Your widget is ready to go!</h4>
         <Button label="Try it out!" onClick={() => alert("Button Clicked!")} />
       </Badge>
       <div style={{ paddingBottom: "5vh" }}>
         <Table headers={tableHeaders} />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -29,7 +29,7 @@ const UploadModal = ({
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <Modal.Header>
-        <h2>Upload</h2>
+        <h2 style={{ color: "#7f23cf" }}>Upload</h2>
       </Modal.Header>
       <Modal.Body>
         <InputBox
